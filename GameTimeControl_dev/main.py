@@ -4,7 +4,7 @@ import os
 import tkinter as tk
 from tkinter import messagebox
 
-# Path configuration (keep your existing path code)
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 PARENT_DIR = os.path.dirname(BASE_DIR)
 DATA_FOLDER = os.path.join(PARENT_DIR, "data")
@@ -49,29 +49,23 @@ def close_game(process_name):
     os.system(f'taskkill /f /im "{process_name}"')
 
 def show_popup(message):
-    # Create custom popup that stays on top
     popup = tk.Tk()
     popup.title("Chrono GTC - Warning")
     popup.geometry("350x155")
     popup.configure(bg='#f0f0f0')
     
-    # Force on top
     popup.attributes('-topmost', True)
     popup.lift()
     popup.focus_force()
     
-    # Center on screen
     popup.eval('tk::PlaceWindow . center')
     
-    # Add icon and message
     tk.Label(popup, text="⏰", font=("Segoe UI", 24), bg='#f0f0f0').pack(pady=5)
     tk.Label(popup, text=message, font=("Segoe UI", 11, "bold"), bg='#f0f0f0').pack()
     
-    # OK button
     tk.Button(popup, text="OK", command=popup.destroy, width=10, 
               bg='#4CAF50', fg='white', font=("Segoe UI", 10)).pack(pady=10)
     
-    # Auto-close after 10 seconds
     popup.after(10000, popup.destroy)
     
     popup.mainloop()
@@ -107,7 +101,6 @@ while True:
             last_check = now
             game_active = True
         
-        # Calculate elapsed time accurately
         elapsed = now - last_check
         if elapsed >= 1.0:
             remaining_time -= elapsed

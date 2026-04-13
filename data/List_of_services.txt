@@ -69,12 +69,10 @@ WUDFHost.exe
 WhatsApp.Root.exe
 WidgetService.exe
 Widgets.exe
-WmiApSrv.exe
 WmiPrvSE.exe
 XboxPcAppFT.exe
 XtuService.exe
 backgroundTaskHost.exe
 dasHost.exe
-msiexec.exe
 omenmqtt.exe
 pet.exe
