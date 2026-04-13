@@ -1,5 +1,4 @@
 AggregatorHost.exe
-Antigravity.exe
 AppActions.exe
 AppHelperCap.exe
 Db.App.exe
