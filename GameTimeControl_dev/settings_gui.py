@@ -17,7 +17,7 @@ def load_ignore_list():
     if not os.path.exists(IGNORE_FILE):
         return []
     with open(IGNORE_FILE, "r") as f:
-        return [line.strip().lower() for line in f.readlines()]
+        return [line.strip() for line in f.readlines()]
 
 def get_apps():
     apps = set()

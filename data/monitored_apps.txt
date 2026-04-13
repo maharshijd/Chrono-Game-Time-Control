@@ -1,1 +1,1 @@
-EpicGamesLauncher.exe
+Notepad.exe
