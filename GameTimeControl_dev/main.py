@@ -17,8 +17,8 @@ if not os.path.exists(DATA_FOLDER):
 
 APPS_FILE = os.path.join(DATA_FOLDER, "monitored_apps.txt")
 SETTINGS_FILE = os.path.join(DATA_FOLDER, "settings.txt")
-WARNING_10 = 55
-WARNING_5 = 20
+WARNING_10 = 10*60
+WARNING_5 = 5*60
 
 def load_monitored_apps():
     if not os.path.exists(APPS_FILE):
