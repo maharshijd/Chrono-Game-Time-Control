@@ -3,12 +3,15 @@ import time
 import os
 import tkinter as tk
 from tkinter import messagebox
+import sys
+import os
 
+if getattr(sys, 'frozen', False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-PARENT_DIR = os.path.dirname(BASE_DIR)
-DATA_FOLDER = os.path.join(PARENT_DIR, "data")
-
+DATA_FOLDER = os.path.join(BASE_DIR, "data")
 if not os.path.exists(DATA_FOLDER):
     os.makedirs(DATA_FOLDER)
 
@@ -80,7 +83,6 @@ print("Chrono GTC running.....")
 print(f"Monitoring: {monitored_apps}")
 print(f"Time limit: {remaining_time // 60} minutes")
 
-# Accurate timing using monotonic clock
 last_check = time.monotonic()
 game_active = False
 

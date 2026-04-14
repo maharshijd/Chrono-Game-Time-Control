@@ -3,8 +3,16 @@ import tkinter as tk
 from tkinter import messagebox
 from tkinter import ttk
 import os
+import sys
+import os
 
-DATA_FOLDER = "data"
+if getattr(sys, 'frozen', False):
+    BASE_DIR = os.path.dirname(sys.executable)
+else:
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+DATA_FOLDER = os.path.join(BASE_DIR, "data")
+
 if not os.path.exists(DATA_FOLDER):
     os.makedirs(DATA_FOLDER)
 
