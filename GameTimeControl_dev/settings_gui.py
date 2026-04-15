@@ -1,8 +1,6 @@
 import psutil
 import tkinter as tk
-from tkinter import messagebox
-from tkinter import ttk
-import os
+from tkinter import ttk, messagebox
 import sys
 import os
 
